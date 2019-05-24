@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd" >
+<sqlMapConfig>
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		lazyLoadingEnabled="true" maxRequests="30" maxSessions="10"
+		maxTransactions="5" useStatementNamespaces="true"
+		/>
+
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver"
+				value="oracle.jdbc.driver.OracleDriver" />
+			<property name="JDBC.ConnectionURL"
+				value="jdbc:oracle:thin:@localhost:1521:orcl" />
+			<property name="JDBC.Username" value="scott" />
+			<property name="JDBC.Password" value="tiger" />
+			<property name="Pool.MaximumActiveConnections" value="10" />
+			<property name="Pool.MaximumIdleConnections" value="5" />
+			<property name="Pool.MaximumCheckoutTime" value="120000" />
+		</dataSource>
+	</transactionManager>
+
+	<sqlMap resource="sql/Emp.xml" />
+
+</sqlMapConfig>
